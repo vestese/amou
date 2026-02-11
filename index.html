@@ -410,10 +410,6 @@
                 <p>Volume: <span id="volumeValue">50</span>%</p>
                 <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="50" oninput="changeVolume(this.value)">
             </div>
-            <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 10px; font-size: 14px; color: #666;">
-                <p><strong>💡 Pour ajouter votre musique :</strong></p>
-                <p>Modifiez la ligne 484 et remplacez "votre-musique.mp3" par le chemin de votre fichier</p>
-            </div>
             <button class="btn" onclick="goToSection(4)">Suivant 💖</button>
         </div>
 
@@ -458,14 +454,8 @@
     </div>
 
     <!-- Audio pour la musique MP3 -->
-    <!-- ⭐ IMPORTANT: Remplacez "votre-musique.mp3" par le chemin de votre fichier musical -->
-    <!-- Options possibles:
-         1. Fichier local: src="votre-musique.mp3" (le fichier doit être dans le même dossier)
-         2. URL en ligne: src="https://example.com/musique.mp3"
-         3. Musiques libres de droits: YouTube Audio Library, Free Music Archive, etc.
-    -->
     <audio id="backgroundMusic" loop>
-        <source src="votre-musique.mp3" type="audio/mpeg">
+        <source src="https://cdn.pixabay.com/download/audio/2022/02/23/audio_5c8b8c6f65.mp3?filename=love-piano-109857.mp3" type="audio/mpeg">
         Votre navigateur ne supporte pas l'audio HTML5.
     </audio>
 
@@ -516,7 +506,7 @@
                     isPlaying = true;
                 }).catch(error => {
                     console.log("Erreur de lecture:", error);
-                    alert("❌ Fichier musical non trouvé!\n\nVeuillez:\n1. Télécharger une musique MP3\n2. La placer dans le même dossier que ce fichier HTML\n3. Modifier la ligne 484 avec le nom exact de votre fichier");
+                    alert("❌ Impossible de lire la musique.\nVérifiez votre connexion internet.");
                 });
             } else {
                 audio.pause();
@@ -620,26 +610,4 @@
         document.addEventListener('mousemove', (e) => {
             if (Math.random() > 0.95) {
                 const heart = document.createElement('div');
-                heart.textContent = '💕';
-                heart.style.position = 'absolute';
-                heart.style.left = e.pageX + 'px';
-                heart.style.top = e.pageY + 'px';
-                heart.style.fontSize = '20px';
-                heart.style.pointerEvents = 'none';
-                heart.style.opacity = '1';
-                heart.style.transition = 'all 1s ease';
-                heart.style.zIndex = '9999';
-                
-                document.body.appendChild(heart);
-                
-                setTimeout(() => {
-                    heart.style.opacity = '0';
-                    heart.style.transform = 'translateY(-50px)';
-                }, 10);
-                
-                setTimeout(() => heart.remove(), 1000);
-            }
-        });
-    </script>
-</body>
-</html>
+                heart.textCo
